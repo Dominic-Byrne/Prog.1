@@ -3,19 +3,19 @@ void encrypt(char * encryted, int rotationAmount); // function of encyrtion
 int main()
 {
        
-    int key = 3;    // key is the number of revolutions, 
+    int key = 1;    // key is the number of revolutions, 
     char message[100] = "ATTACK OF THE CLONES"; // message to be encrypted 
     
     encrypt(message, key); // calls function 
     
-    printf( "Encryted message: %s", message );
+    printf("Encryted message: %s", message);
              
     
     
     return 0;
 }
 void encrypt(char * encryted, int rotationAmount) // pointer (*) is used to place the start of the array in the function
-{
+{ // encryted should become message and rotationAmount should become key 
     char letter;
     int number = 0;
     
@@ -25,7 +25,7 @@ void encrypt(char * encryted, int rotationAmount) // pointer (*) is used to plac
          
         if(letter >= 'a' && letter <= 'z') 
         {
-            letter = (letter + rotationAmount)%26; 
+            letter = (letter + rotationAmount)%26;  
 
             encryted[number] = letter; 
         }
