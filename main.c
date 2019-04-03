@@ -1,5 +1,5 @@
 #include <stdio.h>
-void encrypt(char encryted, int rotationAmount); // function of encyrtion 
+void encrypt(char * encryted, int rotationAmount); // function of encyrtion 
 int main()
 {
        
@@ -14,7 +14,7 @@ int main()
     
     return 0;
 }
-void encrypt(char encryted, int rotationAmount)
+void encrypt(char * encryted, int rotationAmount) // pointer (*) is used to place the start of the array in the function
 {
     char letter;
     int number = 0;
@@ -27,13 +27,13 @@ void encrypt(char encryted, int rotationAmount)
         {
             letter = (letter + rotationAmount)%26; 
 
-            message[number] = letter; 
+            encryted[number] = letter; 
         }
         else if(letter >= 'A' && letter <= 'Z') 
         {
             letter = (letter + rotationAmount)%26; 
 
-            message[number] = letter;
+            encryted[number] = letter;
         }
         number++;
     }
