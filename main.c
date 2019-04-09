@@ -8,7 +8,7 @@ int main()
     
     encrypt(message, key); // calls function 
     
-   printf("Encryted message: %s", encryted);
+   printf("Encryted message: %s", message);
              
     
     
@@ -20,7 +20,7 @@ void encrypt(char * encryted, int rotationAmount) // pointer (*) is used to plac
     int number = 0;
     
     
-    while (encryted != NULL) // ned to find a new condition.
+     for (number = 0; number < NULL; number++)//while (encryted != NULL) // need to find a new condition.
     {// this says that while there are still letters in message to contiune till it finds the NULL point 
          
         if(letter >= 'a' && letter <= 'z') 
@@ -35,7 +35,9 @@ void encrypt(char * encryted, int rotationAmount) // pointer (*) is used to plac
 
             encryted[number] = letter;
         }
-        number++; 
+       
+        
+        return encryted;
         
     }
 
