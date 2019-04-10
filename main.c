@@ -20,24 +20,24 @@ void encrypt(char * encryted, int rotationAmount) // pointer (*) is used to plac
     int number = 0;
     
     
-     for (number = 0; number < NULL; number++)//while (encryted != NULL) // need to find a new condition.
+     for (number = 0; number != NULL; number++)//while (encryted != NULL) // need to find a new condition.
     {// this says that while there are still letters in message to contiune till it finds the NULL point 
          
         if(letter >= 'a' && letter <= 'z') 
         {
-            letter = (letter + rotationAmount)%26;  
+            letter = (letter + rotationAmount);  
 
             encryted[number] = letter; 
         }
         else if(letter >= 'A' && letter <= 'Z') 
         {
-            letter = (letter + rotationAmount)%26; 
+            letter = (letter + rotationAmount); 
 
             encryted[number] = letter;
         }
        
         
-        return encryted;
+        return number;
         
     }
 
