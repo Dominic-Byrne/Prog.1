@@ -16,18 +16,22 @@ int main(void)
     
     switch(x){
     case 1:
-        for (i=0;(message[i]!=0);i++)
-            message[i] = message[i] + key;
-            printf("Encrypted message is: %s\n", message);
+        for (i=0;(message[i]!=0);i++){
+            message[i] = (message[i] + key);
+            if((message[i]+key) > 90){
+            message[i] = (message[i] + (key - 27));
+            }
+        }
+            printf("Encrypted message is: %s", message);
+            
             break;
     case 2: 
         for (i=0;(message[i]!=0);i++)
-            message[i] = message[i] + key;
-            printf("Decrypted message is: %s\n", message);
+            message[i] = (message[i] + key);
+            printf("Decrypted message is: %s", message);
             break;
     default:
             printf("ERROR");
         
 }
 }
-           
