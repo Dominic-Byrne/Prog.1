@@ -1,47 +1,43 @@
 #include <stdio.h>
-void encrypt(char * encryted, int rotationAmount); // function of encyrtion 
-int main()
+int main(void)
 {
-       
-    int key = 1;    // key is the number of revolutions, 
-    char message[100] = "ATTACK OF THE CLONES"; // message to be encrypted 
+    int x, i, key;
+    char message[100];
     
-    encrypt(message, key); // calls function 
+    printf("Enter message to be encrypted or decrypted in capitals: ");
+    scanf("%s", &message);
+    printf("Enter key as an integer: ");
+    scanf("%d", &key);
+    printf("If code needs to be encrypted enter 1\n"); 
+    printf("If code needs to be decrypted enter 2\n"); 
+    printf("Select 1 or 2: ");
+    scanf("%d", &x);
     
-   printf("Encryted message: %s", message);
-             
-    
-    
-    return 0;
-}
-void encrypt(char * encryted, int rotationAmount) // pointer (*) is used to place the start of the array in the function
-{ // encryted should become message and rotationAmount should become key 
-    char letter;
-    int number = 0;
-    
-    
-     for (number = 0; number != NULL; number++)//while (encryted != NULL) // need to find a new condition.
-    {// this says that while there are still letters in message to contiune till it finds the NULL point 
-         
-        if(letter >= 'a' && letter <= 'z') 
-        {
-            letter = (letter + rotationAmount);  
-
-            encryted[number] = letter; 
+    switch(x){
+    case 1:
+        for (i=0;(message[i]!=0);i++){
+            if (message[i]>65 && message[i]<90){
+            message[i] = (message[i] + key);
+            if((message[i]+key) > 90){
+            message[i] = (message[i] + (key - 27));
+            }}
         }
-        else if(letter >= 'A' && letter <= 'Z') 
-        {
-            letter = (letter + rotationAmount); 
-
-            encryted[number] = letter;
+            printf("Encrypted message is: %s", message);
+            
+            break;
+    case 2: 
+        for (i=0;(message[i]!=0);i++){
+            if (message[i]>65 && message[i]<90){
+            message[i] = (message[i] + key);
+            if((message[i]+key) > 90){
+            message[i] = (message[i] + (key - 27));
+            }}
         }
-       
+            printf("Decrypted message is: %s", message);
+            
+            break;
+    default:
+            printf("ERROR");
         
-        return number;
-        
-    }
-
-    
 }
-
-   
+}
