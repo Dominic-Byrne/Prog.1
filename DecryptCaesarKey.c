@@ -1,21 +1,29 @@
 #include <stdio.h>
-void DecryptCaesar(char message[100] int key int i )
+void DecryptCaesar(char ,int ); // FUNCTION PROTOTYPE 
 int main(void)
 {
-int number = 1, x;
-char statment[100] = ATTACK; 
+int number = 1;
+char statment[100] = "ATTACK OF THE CLONE"; 
 
-DecryptCaesar(stament number x);
+DecryptCaesar(stament,number);
    
 }
-void DecryptCaesar(char message[100] int key, int i )
-if (message[i]>65 && message[i]<90)
+void DecryptCaesar(char message[100] int key, )
+int decrypt; 
 for (i=0;(message[i]!=0);i++){
-            message[i] = (message[i] - key);
-            if((message[i]+key) < 90){
+if (message[i]>65 && message[i]<90)
+    decrypt = 1; 
+else
+    decrypt = 0; 
+switch(decrypt){
+    case 1:
+        message[i] = (message[i] - key);
+        if((message[i]+key) < 90){
             message[i] = (message[i] - (key - 27));
-            }
         }
-            
-            
-            return message;
+        break; 
+    case 0: 
+        break; // this is to do nothing as it is whitespace 
+        }
+ }       
+ puts(message);
